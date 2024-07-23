@@ -1455,7 +1455,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"dbo_Producto\",\"dbo_ProductoSubcategoria\",\"dbo_Calendario\",\"Ventas\",\"dbo_Cliente\",\"dbo_Territorio\",\"dbo_ProductoCategoria\"]"
+        "value": "[\"dbo_Producto\",\"dbo_ProductoSubcategoria\",\"dbo_Calendario\",\"Ventas\",\"dbo_Cliente\",\"dbo_Territorio\",\"dbo_ProductoCategoria\"]"
       },
       {
         "name": "SourceLineageTagType",

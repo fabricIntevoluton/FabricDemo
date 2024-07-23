@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Warehouse",
-    "displayName": "DataflowsStagingWarehouse"
+    "displayName": "Almacen Prueba"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "0efd491f-ab12-43e3-b015-467bb274ead9"
+    "logicalId": "ff0b7e2b-eb86-4b5c-8cc9-d0351b6c4627"
   }
 }
