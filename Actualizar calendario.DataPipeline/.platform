@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Actualizar calendario"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dd4480f4-dfd6-4383-96b2-d72836197958"
+  }
+}
