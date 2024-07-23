@@ -1,0 +1,973 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "items": {
+            "value": "@pipeline().parameters.cw_items_0uh",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "Copy",
+              "typeProperties": {
+                "source": {
+                  "type": "AzureSqlSource",
+                  "partitionOption": "None",
+                  "datasetSettings": {
+                    "type": "AzureSqlTable",
+                    "typeProperties": {
+                      "schema": "dbo",
+                      "table": {
+                        "value": "@item().source.table",
+                        "type": "Expression"
+                      },
+                      "database": "db_ventas"
+                    },
+                    "schema": [],
+                    "externalReferences": {
+                      "connection": "c71243f9-e441-40a4-99c8-6520094f63e0"
+                    },
+                    "annotations": []
+                  }
+                },
+                "sink": {
+                  "type": "LakehouseTableSink",
+                  "tableActionOption": "OverwriteSchema",
+                  "partitionOption": "None",
+                  "datasetSettings": {
+                    "type": "LakehouseTable",
+                    "typeProperties": {
+                      "table": {
+                        "value": "@item().destination.table",
+                        "type": "Expression"
+                      }
+                    },
+                    "schema": [],
+                    "linkedService": {
+                      "properties": {
+                        "type": "Lakehouse",
+                        "typeProperties": {
+                          "artifactId": "69e1fb63-50b9-4d5e-92ba-97c04d6d23e8",
+                          "workspaceId": "00000000-0000-0000-0000-000000000000",
+                          "rootFolder": "Tables"
+                        },
+                        "annotations": []
+                      },
+                      "name": "Prueba_Lakehouse"
+                    },
+                    "annotations": []
+                  }
+                },
+                "translator": {
+                  "value": "@item().copyActivity.translator",
+                  "type": "Expression"
+                },
+                "enableStaging": false
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Copy_0uh",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "ForEach_0uh",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "cw_items_0uh": {
+        "type": "Array",
+        "defaultValue": [
+          {
+            "source": {
+              "table": "Calendario"
+            },
+            "destination": {
+              "table": "dbo_Calendario"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "ID",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "ID",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Fecha",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Fecha",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DiaNumeroDeSemana",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "DiaNumeroDeSemana",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DiaNombre",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "DiaNombre",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DiaNumeroDeMes",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "DiaNumeroDeMes",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DiaNumeroDeAno",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "DiaNumeroDeAno",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "AnoFiscal",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "AnoFiscal",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "SemestreFiscal",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "SemestreFiscal",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Periodo",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "Periodo",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NumeroDeSemanaDelAno",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "NumeroDeSemanaDelAno",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MesNombre",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "MesNombre",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "MesNumeroDeAno",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "MesNumeroDeAno",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CalendarioTrimestre",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "CalendarioTrimestre",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "AnoDelCalendario",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "AnoDelCalendario",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "TrimestreFiscal",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "TrimestreFiscal",
+                      "physicalType": "integer"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "Cliente"
+            },
+            "destination": {
+              "table": "dbo_Cliente"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "ClienteClave",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "ClienteClave",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "GeografiaClave",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "GeografiaClave",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Nombre",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "100"
+                    },
+                    "sink": {
+                      "name": "Nombre",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Cumpleanos",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Cumpleanos",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "EstadoCivil",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "EstadoCivil",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Genero",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Genero",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DireccionLinea2",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "200"
+                    },
+                    "sink": {
+                      "name": "DireccionLinea2",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Telefono",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Telefono",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "FechaPrimeraCompra",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "FechaPrimeraCompra",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "IngresosAnuales",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "IngresosAnuales",
+                      "physicalType": "double"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NumeroDeNinasEnCasa",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "NumeroDeNinasEnCasa",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Ocupacion",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Ocupacion",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "BanderaDeDuenoDeCasa",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "BanderaDeDuenoDeCasa",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NumeroDeCochesEnPropiedad",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "NumeroDeCochesEnPropiedad",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DireccionLinea1",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "200"
+                    },
+                    "sink": {
+                      "name": "DireccionLinea1",
+                      "physicalType": "string"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "Producto"
+            },
+            "destination": {
+              "table": "dbo_Producto"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "ProductoClave",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "ProductoClave",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NombreDeProducto",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "100"
+                    },
+                    "sink": {
+                      "name": "NombreDeProducto",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "CostoEstandar",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "CostoEstandar",
+                      "physicalType": "double"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Color",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Color",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NivelDeExistenciasDeSeguridad",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "NivelDeExistenciasDeSeguridad",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "PrecioDeLista",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "PrecioDeLista",
+                      "physicalType": "double"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Subcategoria",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "100"
+                    },
+                    "sink": {
+                      "name": "Subcategoria",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Categoria",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "100"
+                    },
+                    "sink": {
+                      "name": "Categoria",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "ProductoSubcategoriaClave",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "ProductoSubcategoriaClave",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Clase",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Clase",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NombreDelModelo",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "100"
+                    },
+                    "sink": {
+                      "name": "NombreDelModelo",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Descripcion",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "230"
+                    },
+                    "sink": {
+                      "name": "Descripcion",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "FechaDeInicio",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "FechaDeInicio",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "FechaDeCierre",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "FechaDeCierre",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Estado",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Estado",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Tamano",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Tamano",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "RangoDeTamano",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "RangoDeTamano",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Peso",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "Peso",
+                      "physicalType": "double"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "DiasFabricacion",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "DiasFabricacion",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "LineaDeProducto",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "LineaDeProducto",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "APrecioDeConcesionario",
+                      "type": "Double",
+                      "physicalType": "float"
+                    },
+                    "sink": {
+                      "name": "APrecioDeConcesionario",
+                      "physicalType": "double"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "ProductoCategoria"
+            },
+            "destination": {
+              "table": "dbo_ProductoCategoria"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "ProductoCategoriaClave",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "ProductoCategoriaClave",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "ProductCategoryAlternateKey",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "ProductCategoryAlternateKey",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NombreDeCategoriaDeProductoEnIngles",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "NombreDeCategoriaDeProductoEnIngles",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NombreDeCategoriaDeProductoEnEspanol",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "NombreDeCategoriaDeProductoEnEspanol",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NombreDeCategoriaDeProductoEnFrances",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "NombreDeCategoriaDeProductoEnFrances",
+                      "physicalType": "string"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "ProductoSubcategoria"
+            },
+            "destination": {
+              "table": "dbo_ProductoSubcategoria"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "ProductoSubcategoriaClave",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "ProductoSubcategoriaClave",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "ProductoSubcategoriaClaveAlternativa",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "ProductoSubcategoriaClaveAlternativa",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NombreDeSubcategoriaDeProductoEnIngles",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "50"
+                    },
+                    "sink": {
+                      "name": "NombreDeSubcategoriaDeProductoEnIngles",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NombreDeSubcategoriaDeProductoEnEspanol",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "50"
+                    },
+                    "sink": {
+                      "name": "NombreDeSubcategoriaDeProductoEnEspanol",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "NombreDeSubcategoriaDeProductoEnFrances",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "50"
+                    },
+                    "sink": {
+                      "name": "NombreDeSubcategoriaDeProductoEnFrances",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "ProductoCategoriaClave",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "ProductoCategoriaClave",
+                      "physicalType": "integer"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          },
+          {
+            "source": {
+              "table": "Territorio"
+            },
+            "destination": {
+              "table": "dbo_Territorio"
+            },
+            "copyActivity": {
+              "translator": {
+                "type": "TabularTranslator",
+                "mappings": [
+                  {
+                    "source": {
+                      "name": "TerritorioClave",
+                      "type": "Int32",
+                      "physicalType": "int"
+                    },
+                    "sink": {
+                      "name": "TerritorioClave",
+                      "physicalType": "integer"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Region",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Region",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Pais",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Pais",
+                      "physicalType": "string"
+                    }
+                  },
+                  {
+                    "source": {
+                      "name": "Grupo",
+                      "type": "String",
+                      "physicalType": "varchar",
+                      "length": "25"
+                    },
+                    "sink": {
+                      "name": "Grupo",
+                      "physicalType": "string"
+                    }
+                  }
+                ],
+                "typeConversion": true,
+                "typeConversionSettings": {
+                  "allowDataTruncation": true,
+                  "treatBooleanAsNumber": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

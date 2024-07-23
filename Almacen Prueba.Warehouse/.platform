@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "Almacen Prueba"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "55613f49-4268-446f-8779-ed045a8ea9bf"
+  }
+}

@@ -1,0 +1,1708 @@
+{
+  "compatibilityLevel": 1604,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.131.7350.2 (Main)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DatabaseQuery\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"WebModelingEdit\"]"
+      }
+    ],
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "annotations": [
+          {
+            "name": "PBI_IncludeFutureArtifacts",
+            "value": "False"
+          }
+        ],
+        "expression": [
+          "let",
+          "    database = Sql.Database(\"GJA6GRDDAPZE7FSPNV4CTUFOTE-HWGXILNQ2YVEDOMZ67JAAI2BHM.datawarehouse.fabric.microsoft.com\", \"f7bd8e9f-889c-4bbd-9454-da9a0ca8ceea\")",
+          "in",
+          "    database"
+        ],
+        "kind": "m",
+        "lineageTag": "9e0a1a6d-3df8-4297-991b-9fc7145b75ed"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "44092e77-dca8-b3e8-2fdf-67dfd69032d9",
+        "fromColumn": "ProductoCategoriaClave",
+        "fromTable": "dbo_ProductoSubcategoria",
+        "toColumn": "ProductoCategoriaClave",
+        "toTable": "dbo_ProductoCategoria"
+      },
+      {
+        "name": "5ae4f47a-0ea9-9877-af61-17a648d876ad",
+        "fromColumn": "ProductoSubcategoriaClave",
+        "fromTable": "dbo_Producto",
+        "toColumn": "ProductoSubcategoriaClave",
+        "toTable": "dbo_ProductoSubcategoria"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "dbo_Territorio",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "TerritorioClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f2f0bf24-444c-499a-84a9-ddde9948557e",
+            "sourceColumn": "TerritorioClave",
+            "sourceLineageTag": "TerritorioClave",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c2d7e26e-d36f-4420-9d95-449c37162889",
+            "sourceColumn": "Region",
+            "sourceLineageTag": "Region",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Pais",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "528cc62c-da8c-4a6c-9ebe-6df45a64b609",
+            "sourceColumn": "Pais",
+            "sourceLineageTag": "Pais",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Grupo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3fb5303a-5957-44c2-82f2-1da8ef487a4d",
+            "sourceColumn": "Grupo",
+            "sourceLineageTag": "Grupo",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "6894170e-7b02-4cae-9dc2-b3088638a70d",
+        "partitions": [
+          {
+            "name": "dbo_Territorio",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dbo_Territorio",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[dbo_Territorio]"
+      },
+      {
+        "name": "dbo_Producto",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ProductoClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1b09c0cd-74ee-4336-a797-3904ec562570",
+            "sourceColumn": "ProductoClave",
+            "sourceLineageTag": "ProductoClave",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "NombreDeProducto",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1629175e-12cb-438e-94b7-0a1562abf3fe",
+            "sourceColumn": "NombreDeProducto",
+            "sourceLineageTag": "NombreDeProducto",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CostoEstandar",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "01b576f3-a5a1-4cf7-8f83-0580e47032d3",
+            "sourceColumn": "CostoEstandar",
+            "sourceLineageTag": "CostoEstandar",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Color",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cad3abd8-4283-4665-b2a4-6ec9bae5a3e1",
+            "sourceColumn": "Color",
+            "sourceLineageTag": "Color",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NivelDeExistenciasDeSeguridad",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4cb2b6dd-6585-4302-989b-15377a2c8c21",
+            "sourceColumn": "NivelDeExistenciasDeSeguridad",
+            "sourceLineageTag": "NivelDeExistenciasDeSeguridad",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "PrecioDeLista",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "52995867-3eb8-440e-b8da-f93193e214ed",
+            "sourceColumn": "PrecioDeLista",
+            "sourceLineageTag": "PrecioDeLista",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Subcategoria",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "35101eaf-9520-4746-b0cd-1a11614e3c67",
+            "sourceColumn": "Subcategoria",
+            "sourceLineageTag": "Subcategoria",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Categoria",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b0a6f283-2c5c-4f8c-935e-1f9c94383fb6",
+            "sourceColumn": "Categoria",
+            "sourceLineageTag": "Categoria",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductoSubcategoriaClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "021c130b-baf8-44ec-90e4-a1da71d813e6",
+            "sourceColumn": "ProductoSubcategoriaClave",
+            "sourceLineageTag": "ProductoSubcategoriaClave",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Clase",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "042979c4-1f10-437f-a537-4d9c58e86df5",
+            "sourceColumn": "Clase",
+            "sourceLineageTag": "Clase",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NombreDelModelo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d3e1e9ad-f948-41b6-b320-1515d83099d3",
+            "sourceColumn": "NombreDelModelo",
+            "sourceLineageTag": "NombreDelModelo",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Descripcion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0f6222a2-7887-4596-83fb-e7ebd967c552",
+            "sourceColumn": "Descripcion",
+            "sourceLineageTag": "Descripcion",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FechaDeInicio",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6111ecbb-296d-49d1-8cdc-697708ad08bb",
+            "sourceColumn": "FechaDeInicio",
+            "sourceLineageTag": "FechaDeInicio",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FechaDeCierre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4de33d5b-576b-4362-9574-c58c35cf75d4",
+            "sourceColumn": "FechaDeCierre",
+            "sourceLineageTag": "FechaDeCierre",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Estado",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e5126401-75d2-48e8-8e61-a21b1a5a7c8a",
+            "sourceColumn": "Estado",
+            "sourceLineageTag": "Estado",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Tamano",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8ad48b1a-7583-488f-80cd-c80eea7acba5",
+            "sourceColumn": "Tamano",
+            "sourceLineageTag": "Tamano",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "RangoDeTamano",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e917eac4-2dfd-48d1-9641-745243be9f73",
+            "sourceColumn": "RangoDeTamano",
+            "sourceLineageTag": "RangoDeTamano",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Peso",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "0c7c3fae-40b2-427a-acf0-376f0e213260",
+            "sourceColumn": "Peso",
+            "sourceLineageTag": "Peso",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "DiasFabricacion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2df02107-95f1-4349-8b45-ff4fe00beba0",
+            "sourceColumn": "DiasFabricacion",
+            "sourceLineageTag": "DiasFabricacion",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "LineaDeProducto",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d9a7d17d-7ba3-4d6c-b305-1dfcc8e32736",
+            "sourceColumn": "LineaDeProducto",
+            "sourceLineageTag": "LineaDeProducto",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "APrecioDeConcesionario",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "57cb0c82-3cec-41ed-b5ae-a2e5ba9c3d46",
+            "sourceColumn": "APrecioDeConcesionario",
+            "sourceLineageTag": "APrecioDeConcesionario",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "5bb7c15b-8e58-4b1a-ad52-3a6fd68f59b1",
+        "partitions": [
+          {
+            "name": "dbo_Producto",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dbo_Producto",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[dbo_Producto]"
+      },
+      {
+        "name": "dbo_Cliente",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ClienteClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "33c48bc2-fe8e-480d-8610-ea9b9cb27037",
+            "sourceColumn": "ClienteClave",
+            "sourceLineageTag": "ClienteClave",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "GeografiaClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c507489f-aea2-4c48-a05c-23bd8b52c7c4",
+            "sourceColumn": "GeografiaClave",
+            "sourceLineageTag": "GeografiaClave",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Nombre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "86c5a73c-a376-44a3-8a9e-0980187091e9",
+            "sourceColumn": "Nombre",
+            "sourceLineageTag": "Nombre",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cumpleanos",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6bbba639-156e-4020-becb-24d0a0f0f189",
+            "sourceColumn": "Cumpleanos",
+            "sourceLineageTag": "Cumpleanos",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "EstadoCivil",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7c4d4f5b-7954-4fd8-80fc-ddd7f64d3011",
+            "sourceColumn": "EstadoCivil",
+            "sourceLineageTag": "EstadoCivil",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Genero",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a947c3a0-40af-444c-a035-bec81fb39337",
+            "sourceColumn": "Genero",
+            "sourceLineageTag": "Genero",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DireccionLinea2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "beb93683-d965-499f-91c6-fba363898116",
+            "sourceColumn": "DireccionLinea2",
+            "sourceLineageTag": "DireccionLinea2",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Telefono",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "88ee5091-9c95-4c2f-b3d2-8ed3f03eed92",
+            "sourceColumn": "Telefono",
+            "sourceLineageTag": "Telefono",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FechaPrimeraCompra",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c8f8f8c9-087a-4f7f-8f20-872381adb4b7",
+            "sourceColumn": "FechaPrimeraCompra",
+            "sourceLineageTag": "FechaPrimeraCompra",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IngresosAnuales",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "2d030cc1-4111-41cb-a061-5efd48cf7558",
+            "sourceColumn": "IngresosAnuales",
+            "sourceLineageTag": "IngresosAnuales",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "NumeroDeNinasEnCasa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a0a6a97b-66f5-4aba-b030-7b77a9c811af",
+            "sourceColumn": "NumeroDeNinasEnCasa",
+            "sourceLineageTag": "NumeroDeNinasEnCasa",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Ocupacion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "60aa07e2-9a0b-4410-84b1-2bf1094c5f33",
+            "sourceColumn": "Ocupacion",
+            "sourceLineageTag": "Ocupacion",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "BanderaDeDuenoDeCasa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d8ef5831-d563-4e09-8083-3486c9a1a9fb",
+            "sourceColumn": "BanderaDeDuenoDeCasa",
+            "sourceLineageTag": "BanderaDeDuenoDeCasa",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "NumeroDeCochesEnPropiedad",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "77248772-a93f-4ebb-b9e1-6ba36ddb7086",
+            "sourceColumn": "NumeroDeCochesEnPropiedad",
+            "sourceLineageTag": "NumeroDeCochesEnPropiedad",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "DireccionLinea1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6ce9ae8b-21df-40a7-b1eb-3a7faf4d8372",
+            "sourceColumn": "DireccionLinea1",
+            "sourceLineageTag": "DireccionLinea1",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "cac1f838-b064-413f-b87c-5d3a9e8e836f",
+        "partitions": [
+          {
+            "name": "dbo_Cliente",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dbo_Cliente",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[dbo_Cliente]"
+      },
+      {
+        "name": "dbo_ProductoSubcategoria",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ProductoSubcategoriaClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "794309b3-2b7e-4da0-af4e-746e3248c8c6",
+            "sourceColumn": "ProductoSubcategoriaClave",
+            "sourceLineageTag": "ProductoSubcategoriaClave",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductoSubcategoriaClaveAlternativa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1fc9bc28-6b69-453e-8087-ad63de1250ca",
+            "sourceColumn": "ProductoSubcategoriaClaveAlternativa",
+            "sourceLineageTag": "ProductoSubcategoriaClaveAlternativa",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "NombreDeSubcategoriaDeProductoEnIngles",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3aad5163-f288-4441-a9b6-f8c533e6ca5e",
+            "sourceColumn": "NombreDeSubcategoriaDeProductoEnIngles",
+            "sourceLineageTag": "NombreDeSubcategoriaDeProductoEnIngles",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NombreDeSubcategoriaDeProductoEnEspanol",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eac70381-ae92-4b73-8b89-251c02564976",
+            "sourceColumn": "NombreDeSubcategoriaDeProductoEnEspanol",
+            "sourceLineageTag": "NombreDeSubcategoriaDeProductoEnEspanol",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NombreDeSubcategoriaDeProductoEnFrances",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "09fbf488-910d-43c9-b6f5-a655dc89ae3b",
+            "sourceColumn": "NombreDeSubcategoriaDeProductoEnFrances",
+            "sourceLineageTag": "NombreDeSubcategoriaDeProductoEnFrances",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductoCategoriaClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5af6d199-bfc9-47fd-b65a-ad05062f0c9f",
+            "sourceColumn": "ProductoCategoriaClave",
+            "sourceLineageTag": "ProductoCategoriaClave",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2a0acb05-3707-45d8-9c71-68fa22ea7566",
+        "partitions": [
+          {
+            "name": "dbo_ProductoSubcategoria",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dbo_ProductoSubcategoria",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[dbo_ProductoSubcategoria]"
+      },
+      {
+        "name": "dbo_ProductoCategoria",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ProductoCategoriaClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5da76be9-aeff-48f5-b6a4-f20c0c2507c2",
+            "sourceColumn": "ProductoCategoriaClave",
+            "sourceLineageTag": "ProductoCategoriaClave",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ProductCategoryAlternateKey",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a9026d3a-f35d-4dce-b5a2-456df5ae449a",
+            "sourceColumn": "ProductCategoryAlternateKey",
+            "sourceLineageTag": "ProductCategoryAlternateKey",
+            "sourceProviderType": "int",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NombreDeCategoriaDeProductoEnIngles",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "059466fe-a36b-41b9-8021-2de7178cf364",
+            "sourceColumn": "NombreDeCategoriaDeProductoEnIngles",
+            "sourceLineageTag": "NombreDeCategoriaDeProductoEnIngles",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NombreDeCategoriaDeProductoEnEspanol",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5ba0526c-d529-4173-9779-50314b4a5f97",
+            "sourceColumn": "NombreDeCategoriaDeProductoEnEspanol",
+            "sourceLineageTag": "NombreDeCategoriaDeProductoEnEspanol",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NombreDeCategoriaDeProductoEnFrances",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "62974e3e-4b83-40ea-90e1-c51beb4f8042",
+            "sourceColumn": "NombreDeCategoriaDeProductoEnFrances",
+            "sourceLineageTag": "NombreDeCategoriaDeProductoEnFrances",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "ae924afc-8953-4229-a315-2a1a9e997858",
+        "partitions": [
+          {
+            "name": "dbo_ProductoCategoria",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dbo_ProductoCategoria",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[dbo_ProductoCategoria]"
+      },
+      {
+        "name": "Ventas",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ProductoClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2fdc801e-9f30-48b9-9edc-91f53b5fcfa9",
+            "sourceColumn": "ProductoClave",
+            "sourceLineageTag": "ProductoClave",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "FechaDeOrden",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "53265697-76c9-4e3a-bcd5-8049ee5aa25a",
+            "sourceColumn": "FechaDeOrden",
+            "sourceLineageTag": "FechaDeOrden",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FechaDeOrdenClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a8218c66-2c56-4987-83cc-8f74c669d15d",
+            "sourceColumn": "FechaDeOrdenClave",
+            "sourceLineageTag": "FechaDeOrdenClave",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ClienteClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2d06e598-6506-439f-b3ac-c89fab2a3f1a",
+            "sourceColumn": "ClienteClave",
+            "sourceLineageTag": "ClienteClave",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "TerriorioDeVentasClave",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5fd5e430-2911-41d5-86d5-5d11893fad92",
+            "sourceColumn": "TerriorioDeVentasClave",
+            "sourceLineageTag": "TerriorioDeVentasClave",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "NumeroDeOrdenDeventas",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bac081cf-a5e3-4b02-9e8a-6d379c9d9005",
+            "sourceColumn": "NumeroDeOrdenDeventas",
+            "sourceLineageTag": "NumeroDeOrdenDeventas",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NumeroDeLineaDePedidoDeVentas",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "34d832d8-8dbc-49fa-96a2-533bac43fa76",
+            "sourceColumn": "NumeroDeLineaDePedidoDeVentas",
+            "sourceLineageTag": "NumeroDeLineaDePedidoDeVentas",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CantidadDeLaOrden",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "faf1dd36-7aba-413a-9982-7f9b385b23c6",
+            "sourceColumn": "CantidadDeLaOrden",
+            "sourceLineageTag": "CantidadDeLaOrden",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "PrecioUnitario",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "58bd19b6-ed22-4a91-9fc2-fb66e8c990e8",
+            "sourceColumn": "PrecioUnitario",
+            "sourceLineageTag": "PrecioUnitario",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "MontoExtendido",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "700b74af-8435-47ae-987e-c744c53b869e",
+            "sourceColumn": "MontoExtendido",
+            "sourceLineageTag": "MontoExtendido",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "PorcentajeDeDescuentoDelPrecioUnitario",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "19dac3d9-27d8-420e-aa23-ba9e97a3a8f2",
+            "sourceColumn": "PorcentajeDeDescuentoDelPrecioUnitario",
+            "sourceLineageTag": "PorcentajeDeDescuentoDelPrecioUnitario",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ImporteDeDescuento",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ad9b7826-ebd5-4223-86aa-df4915c8147b",
+            "sourceColumn": "ImporteDeDescuento",
+            "sourceLineageTag": "ImporteDeDescuento",
+            "sourceProviderType": "bigint",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CostoEstandarDelProducto",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "7d945e77-736c-451d-8584-c1d3597334a0",
+            "sourceColumn": "CostoEstandarDelProducto",
+            "sourceLineageTag": "CostoEstandarDelProducto",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CostoTotalDelProducto",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c1c0236f-3b4e-4da9-96f1-21bf8b210f31",
+            "sourceColumn": "CostoTotalDelProducto",
+            "sourceLineageTag": "CostoTotalDelProducto",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CantidadDeVentas",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "0b97216a-6c12-4459-9edc-1a226d371088",
+            "sourceColumn": "CantidadDeVentas",
+            "sourceLineageTag": "CantidadDeVentas",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "LeyDeImpuestos",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "a8ca2eb4-3b6d-4d72-b458-ac781f7b9d94",
+            "sourceColumn": "LeyDeImpuestos",
+            "sourceLineageTag": "LeyDeImpuestos",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Transporte",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "11722379-5856-4b0a-b77a-534baaa94fcc",
+            "sourceColumn": "Transporte",
+            "sourceLineageTag": "Transporte",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "MesDeLaRegionID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9b7db013-0377-400e-810e-904fc93d02b9",
+            "sourceColumn": "MesDeLaRegionID",
+            "sourceLineageTag": "MesDeLaRegionID",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "6d4225c3-b968-4bc1-95b3-75740730c39e",
+        "measures": [
+          {
+            "name": "Ventas totales",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "Name"
+              }
+            ],
+            "expression": "SUM( Ventas[CantidadDeVentas] )",
+            "lineageTag": "8e69ce10-dd63-479f-86fd-d727e80dcea2"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Ventas",
+            "mode": "directLake",
+            "source": {
+              "entityName": "Ventas",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[Ventas]"
+      },
+      {
+        "name": "dbo_Calendario_2",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b90832f7-a3ec-48e6-a7c6-96c4ac540a37",
+            "sourceColumn": "ID",
+            "sourceLineageTag": "ID",
+            "sourceProviderType": "int",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "Fecha",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "6c6ce2fc-45e1-41f6-b792-ab15d7b30417",
+            "sourceColumn": "Fecha",
+            "sourceLineageTag": "Fecha",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DiaNumeroDeSemana",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fe698db3-f04c-4132-9e08-477ecbc5dde6",
+            "sourceColumn": "DiaNumeroDeSemana",
+            "sourceLineageTag": "DiaNumeroDeSemana",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "DiaNombre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cc4381d1-17d1-4d0a-86bb-74e4a6bf038c",
+            "sourceColumn": "DiaNombre",
+            "sourceLineageTag": "DiaNombre",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DiaNumeroDeMes",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bb4e4281-c5df-4ad1-8255-743513f4610d",
+            "sourceColumn": "DiaNumeroDeMes",
+            "sourceLineageTag": "DiaNumeroDeMes",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "DiaNumeroDeAno",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "371a0d90-3b03-4b4c-8a60-160943d25fae",
+            "sourceColumn": "DiaNumeroDeAno",
+            "sourceLineageTag": "DiaNumeroDeAno",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AnoFiscal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c76a7114-3055-4155-abfa-f40faf5946c7",
+            "sourceColumn": "AnoFiscal",
+            "sourceLineageTag": "AnoFiscal",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "SemestreFiscal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "cb7de90d-b34c-4640-9ce8-7b80c643effe",
+            "sourceColumn": "SemestreFiscal",
+            "sourceLineageTag": "SemestreFiscal",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Periodo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b0b65fd7-38da-440a-8c7b-d5f8b5801d3f",
+            "sourceColumn": "Periodo",
+            "sourceLineageTag": "Periodo",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "NumeroDeSemanaDelAno",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e8ac0b4d-ce92-4529-b10e-d2c7b9da8245",
+            "sourceColumn": "NumeroDeSemanaDelAno",
+            "sourceLineageTag": "NumeroDeSemanaDelAno",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "MesNombre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1e1a8a03-27d2-41cd-bd31-4af8ed44a777",
+            "sourceColumn": "MesNombre",
+            "sourceLineageTag": "MesNombre",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MesNumeroDeAno",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "073d8580-804a-46e4-b9fe-0ec8267748ac",
+            "sourceColumn": "MesNumeroDeAno",
+            "sourceLineageTag": "MesNumeroDeAno",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CalendarioTrimestre",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "41d17acf-6b19-4792-a028-f55963215cb5",
+            "sourceColumn": "CalendarioTrimestre",
+            "sourceLineageTag": "CalendarioTrimestre",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "AnoDelCalendario",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "42d6acd3-2e25-431b-900d-53c3836967f9",
+            "sourceColumn": "AnoDelCalendario",
+            "sourceLineageTag": "AnoDelCalendario",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "TrimestreFiscal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b5887d24-9176-434d-9219-75bb79361906",
+            "sourceColumn": "TrimestreFiscal",
+            "sourceLineageTag": "TrimestreFiscal",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "20f5b409-5d21-4cf9-9d0a-3a7927151006",
+        "partitions": [
+          {
+            "name": "dbo_Calendario_2",
+            "mode": "directLake",
+            "source": {
+              "entityName": "dbo_Calendario_2",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[dbo_Calendario_2]"
+      },
+      {
+        "name": "VentasPorRegion",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "AnioCalendario",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8d8cc118-0593-4fc6-88f2-765caebc8533",
+            "sourceColumn": "AnioCalendario",
+            "sourceLineageTag": "AnioCalendario",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Mes",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "71c1a15c-f7bf-4e1c-9542-e94a133adf5c",
+            "sourceColumn": "Mes",
+            "sourceLineageTag": "Mes",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "902fb2e0-51ae-460a-895d-980e2c1ebb33",
+            "sourceColumn": "Region",
+            "sourceLineageTag": "Region",
+            "sourceProviderType": "varchar(8000)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "VentasTotales",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "e99a795c-147e-4f4f-9b16-578e06162124",
+            "sourceColumn": "VentasTotales",
+            "sourceLineageTag": "VentasTotales",
+            "sourceProviderType": "float",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "7d0a3d04-2924-4192-aed6-9c2c0b34db87",
+        "partitions": [
+          {
+            "name": "VentasPorRegion",
+            "mode": "directLake",
+            "source": {
+              "entityName": "VentasPorRegion",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[dbo].[VentasPorRegion]"
+      }
+    ]
+  }
+}

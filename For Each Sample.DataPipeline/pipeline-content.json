@@ -1,0 +1,48 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Lookup1",
+        "type": "Lookup",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "JsonSource",
+            "storeSettings": {
+              "type": "AzureBlobStorageReadSettings",
+              "recursive": true,
+              "enablePartitionDiscovery": false
+            },
+            "formatSettings": {
+              "type": "JsonReadSettings"
+            }
+          },
+          "firstRowOnly": false,
+          "datasetSettings": {
+            "annotations": [],
+            "type": "Json",
+            "typeProperties": {
+              "location": {
+                "type": "AzureBlobStorageLocation",
+                "fileName": "ecdc_lista_archivos.json",
+                "folderPath": "configuraciones",
+                "container": "laureatedata"
+              }
+            },
+            "schema": {},
+            "externalReferences": {
+              "connection": "9fee9f71-1836-4aea-bdaf-7ed33ccc7a69"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
