@@ -47,31 +47,6 @@
         "dependsOn": []
       },
       {
-        "type": "Office365Outlook",
-        "typeProperties": {
-          "inputs": {
-            "body": {
-              "To": "jhiguera@intevolution.ai",
-              "Subject": "Archino inexistente",
-              "Body": "<p>No se encuntro el achivo </p>",
-              "Sensitivity": "",
-              "Importance": "Normal"
-            },
-            "method": "post",
-            "path": "/v2/Mail"
-          }
-        },
-        "name": "Office 365 Outlook1",
-        "dependsOn": [
-          {
-            "activity": "Verificar si el archivo existe",
-            "dependencyConditions": [
-              "Failed"
-            ]
-          }
-        ]
-      },
-      {
         "type": "GetMetadata",
         "typeProperties": {
           "datasetSettings": {
