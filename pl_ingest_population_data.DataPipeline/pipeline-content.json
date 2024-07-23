@@ -280,6 +280,31 @@
             ]
           }
         ]
+      },
+      {
+        "type": "Office365Outlook",
+        "typeProperties": {
+          "inputs": {
+            "body": {
+              "To": "jhiguera@intevolution.ai",
+              "Subject": "Canalización ha fallado",
+              "Body": "<p>@{pipeline().PipelineName} Ha fallado</p>",
+              "Sensitivity": "",
+              "Importance": "Normal"
+            },
+            "method": "post",
+            "path": "/v2/Mail"
+          }
+        },
+        "name": "Enviar notificacion por correo",
+        "dependsOn": [
+          {
+            "activity": "Verificar si el archivo existe",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
       }
     ]
   }
